@@ -70,12 +70,12 @@ cancion_2 = ("Porque soy feliz, aplaude si te sientes como una habitación sin t
 texto= input("ingrese un texto:").lower()
 texto_separado= texto.lower().split()
 
-if "poema".strip() in " ".join(texto_separado) or "amor".strip() in " ".join(texto_separado):
+if "poema" in " ".join(texto_separado) or "amor" in " ".join(texto_separado):
     print("Aquí tienes poemas de ejemplo:")
     print("1:", poema)
     print("2:",poema_2)
   
-if "cancion".strip()in " ".join(texto_separado) or "alegria".strip() in " ".join(texto_separado):
+if "cancion" in " ".join(texto_separado) or "alegria" in " ".join(texto_separado):
     print("Aquí tienes canciónes de ejemplo:","1:", cancion,"2:", cancion_2)
     
 """
