@@ -7,8 +7,8 @@ texto_extraido= texto.split()
 palabra_primera=texto_extraido[0]
 palabra_ultima=texto_extraido [-1]
 
-print("primera palabra", palabra_primera)
-print("última palabra", palabra_ultima)
+print("primera palabra:", palabra_primera)
+print("última palabra:", palabra_ultima)
 """
 
 
