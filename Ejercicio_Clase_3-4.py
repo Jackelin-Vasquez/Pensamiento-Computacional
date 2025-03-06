@@ -13,7 +13,7 @@ print("última palabra", palabra_ultima)
 
 
 """
-2. Crea un programa que elimine los espacios repetidos en una cadena
+#2. Crea un programa que elimine los espacios repetidos en una cadena
 texto= ("Hola  mundo  en Python")
 texto_limpio= " ".join(texto.split())
 print(texto_limpio)
@@ -22,7 +22,7 @@ print(texto_limpio)
 
 
 """
-3. Dado un correo electrónico, extrae solo el dominio.
+#3. Dado un correo electrónico, extrae solo el dominio.
 
 Correo= ("usuario@gmail.com")
 correo_separado= Correo.split('@')[1]
@@ -30,7 +30,7 @@ print(correo_separado)
 """
 
 """
-4. Dado un nombre de archivo, verifica si tiene la extensión correcta (ej. .pdf)
+#4. Dado un nombre de archivo, verifica si tiene la extensión correcta (ej. .pdf)
 
 Archivo= ("documento.pdf")
 extension= Archivo.endswith("pdf")
@@ -43,7 +43,7 @@ print(extension_2)
 """
 
 """
-5. Dado un texto, invierte el orden de las palabras
+#5. Dado un texto, invierte el orden de las palabras
 
 Texto_1= ("Me gusta Phyton")
 Texto_invertido= "".join(Texto_1.split()[::-1])
