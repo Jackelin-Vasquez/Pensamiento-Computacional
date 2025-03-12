@@ -34,7 +34,7 @@ año_actual = int(input("Ingrese el año actual: "))
 
 #último dígito de la placa 
 ultimo_digito_placa = int(placa[len(placa) - 1]) 
-
+restricción = ""
 # Verificar restricciones por año
 if año >= 2001:
     # Restricción por último dígito 
