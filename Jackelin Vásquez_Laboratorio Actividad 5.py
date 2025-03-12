@@ -32,9 +32,8 @@ placa = input("Ingrese la placa del vehiculo: ")
 año = int(input("Ingrese el año del vehículo: "))
 año_actual = int(input("Ingrese el año actual: "))
 
-# Obtener el último dígito de la placa 
-ultimo_digito_placa = int(placa[-1])
-
+#último dígito de la placa 
+ultimo_digito_placa = int(placa[len(placa) - 1]) 
 
 # Verificar restricciones por año
 if año >= 2001:
