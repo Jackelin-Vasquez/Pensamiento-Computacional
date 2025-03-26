@@ -26,10 +26,25 @@ while i != palabra_secreta:
         print ( "Haz dejado el bucle con exito!")
         break
 """
+"""
 #Escenario 2: La sentencia continue se usa para omitir el bloque actual y avanzar a la siguiente iteración, sin ejecutar las sentencias dentro del bucle.
-user_word=input("ingrese una palabra:")
-user_word=user_word.upper()
-vocales= ("aeiou")
+user_word = input("Ingresa una palabra: ")
+user_word = user_word.upper() 
 
-for vocales in user_word:
-    
+for letter in user_word:
+    if letter == 'A' or letter == 'E' or letter == 'I' or letter == 'O' or letter == 'U':
+        continue  
+    print(letter)  
+"""
+#Escenario 3: Escucha esta historia: Un niño y su padre, un programador de computadoras, juegan con bloques de madera. Están construyendo una pirámide. 
+
+bloques = int(input("Ingresa la cantidad de bloques: "))
+altura = 0
+capa = 1
+
+while bloques >= capa:
+    bloques -= capa  
+    altura += 1  
+    capa += 1  
+
+print("La altura máxima de la pirámide es:", altura)
