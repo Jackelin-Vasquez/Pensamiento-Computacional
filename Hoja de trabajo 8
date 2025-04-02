@@ -25,16 +25,45 @@ print("7Longitud de los nombre:", longitudes)
 """
 #Escenario 1
 
-num_clientes= int(input("Ingrese el numero de clientes:"))
-evaluaciones= []
+n = int(input("Ingrese la cantidad de clientes: "))
 
-print ("INgrese calificaión de 1 a 5 de los clientes:")
+contador = [0] * 5
+suma_respuestas = 0
 
-for i in range(num_clientes):
+print("Ingrese las evaluaciones de los clientes (1-5)")
+
+for i in range(n):
     while True:
-        evaluacion = int(input(f"cliente {i+1}:"))
-        if 1<= evaluacion <=5:
-            evaluaciones.append (evaluacion)
+        respuesta = int(input(f"Cliente {i+1}, calificación (1-5): "))
+        if 1<= respuesta <= 5:
+            contador[respuesta - 1] += 1
+            suma_respuestas += respuesta
             break
-        else: 
-            print("Debe ingresar valores entre 1 y 5")
+        else:
+            print("Ingre un valor entre 1 y 5")
+        
+promedio = suma_respuestas / n
+
+menores_al_promedio = 0
+for i in range(5):
+    if i + 1 < promedio:
+        menores_al_promedio += contador[i]
+
+mas_frecuente = 1
+frecuencia_mayor = contador[0]
+for i in range(1, 5):
+    if contador[i] > frecuencia_mayor:
+        mas_frecuente = i + 1
+        frecuencia_mayor = contador[i]
+
+porcentaje_menores = (menores_al_promedio / n) * 100
+
+print("Resultados:")
+print("Excelente:", contador[4])
+print("Muy Buena:", contador[3])
+print("Buena:", contador[2])
+print("Regular:",contador[1])
+print("Malo:",contador[0])
+print("Más frecuente:", mas_frecuente)
+print("Promedio:", promedio)
+print("Porcentaje menor al promedio:", porcentaje_menores,"%")
