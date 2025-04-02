@@ -1,0 +1,40 @@
+"""
+#Ejercicio 1
+n=int(input("tamo array:"))
+m=int(input("multiplo"))
+salida= []
+for i in range(0,n):
+    salida.append((i+1)*m) 
+print(salida)
+"""
+"""
+#Ejercicio 2
+tamaño= int(input("Ingrese tamaño de array:"))
+
+nombres= []
+longitudes=[]
+
+for i in range (tamaño):
+    nombre= input(f"Ingrese nombre {i +1}:")
+    nombres.append(nombre)
+    longitudes.append(len(nombre))
+    
+print("Nombre ingresados:", nombres)
+print("7Longitud de los nombre:", longitudes)
+
+"""
+#Escenario 1
+
+num_clientes= int(input("Ingrese el numero de clientes:"))
+evaluaciones= []
+
+print ("INgrese calificaión de 1 a 5 de los clientes:")
+
+for i in range(num_clientes):
+    while True:
+        evaluacion = int(input(f"cliente {i+1}:"))
+        if 1<= evaluacion <=5:
+            evaluaciones.append (evaluacion)
+            break
+        else: 
+            print("Debe ingresar valores entre 1 y 5")
