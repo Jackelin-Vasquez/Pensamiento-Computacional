@@ -1,0 +1,74 @@
+"""
+#Ejericio 1.
+def es_par_impar (n):
+    if n%2==0:
+        print("es par")
+    else:
+        print("es impar")
+        
+es_par_impar(3)
+
+"""
+"""
+#Ejercicio 2.
+
+def suma_lista (lista):
+    if not lista:
+        return 0
+    else:
+        return lista [0] +suma_lista(lista[1:])
+        
+numeros= [1,2,3] #ejem´plo de lista
+resultado= suma_lista(numeros)
+print(f"la suma es:{resultado}")
+
+"""
+"""
+#ejercicio 3.
+def cuenta_regresiva(n):
+    if n<0:
+        print("despeque!")
+    else:
+        print(n)
+        cuenta_regresiva(n-1)#recursividad
+cuenta_regresiva(3)
+"""
+"""
+#Ejercicio 4.
+def cuenta_ascendente(n):
+    if n>0:
+        cuenta_ascendente(n-1)
+        print(n)
+cuenta_ascendente(5)
+"""
+"""
+#Ejercicio 5.
+def suma_hasta(n):
+    if n==1:
+        return 1
+    else:
+        return n + suma_hasta(n-1)
+print(suma_hasta(4))
+"""
+"""
+#ejercicio 6.
+def factorial (n):
+    if n==0 or n==1:
+        return 1
+    else:
+        return n* factorial(n-1)
+    
+print(factorial(5))
+"""
+#Ejercicio 7.
+def minimo(lista):
+    if len(lista)==1:
+        return lista[0]
+    else:
+        minimo_res= minimo(lista[1:])
+        if lista [0]<minimo_res:
+            return lista [0]
+        else: 
+            return minimo_res
+            
+print(minimo([5, 3, 8, 1, 2]))
