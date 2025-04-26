@@ -1,0 +1,12 @@
+"""
+Instrucciones: Clasifica cada caso como “función” (devuelve un valor) o “procedimiento”
+(solo ejecuta una acción).
+
+Descripción	¿Función o procedimiento?
+Mostrar un saludo por pantalla- Procedimiento
+Calcular el doble de un número- Función
+Imprimir un menú con 3 opciones -	Procedimiento
+Devolver la suma de dos números	- Función
+Crear un juego interactivo en el que el programa "piense" en un número aleatorio y el jugador debe adivinarlo -	Procedimiento
+Mostrar cuánto tiempo tarda el jugador en adivinar el número -	Procedimiento
+"""
