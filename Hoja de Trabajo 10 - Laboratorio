@@ -69,9 +69,10 @@ class Gato(Animal):
         print(f"Color Pelaje:{self.color_pelaje}")
         
 class Ave(Animal):
-    def _init_(self, nombre, edad, peso, tipo_pico):
+    def _init_(self, nombre, edad, peso, tipo_pico, color_plumas):
         super()._init_(nombre,edad,peso)
         self.tipo_pico= tipo_pico
+        self.color_plumas= color_plumas
         
     def calcular_dosis(self):
         return self.peso * 0.05
@@ -79,6 +80,7 @@ class Ave(Animal):
     def mostrar_datos_medicos (self):
         super().mostrar_datos_medicos()
         print(f"Tipo de Pico= {self.tipo_pico}")
+        print(f"Color Plumas= {self.color_plumas}")
         
 class reptil(Animal):
     def _init_(self, nombre,edad,peso, escamas):
