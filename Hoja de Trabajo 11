@@ -1,28 +1,82 @@
+"""
+#EJERCICIO 1
 import math
-from abc import abc, abstractmethod
+from abc import ABC, abstractmethod
 
-class ExperimentoFisico(abc):
+class ExperimentoFisico(ABC): #Clase base con metodo abstract 
     @abstractmethod
-    def realizar_experimento(self)
-    pass
-
-class caidalibre(ExperimentoFisico):
-    def __init__(self, altura,gravedad)
-    self.altura =altura
-    sel.gravedad=gravedad
-    
     def realizar_experimento(self):
-        if sel.altura <0 or self.gravedad <0:
+        pass
 
-            raise print("La altura o tiempo no puede ser menor a 0")
-            
-        tiempo= math.sqrt( (2*self.altura)/ self.gravedad))
+class CaidaLibre(ExperimentoFisico): #subclase
+    def __init__(self, altura, gravedad):
+        self.altura = altura
+        self.gravedad = gravedad
+
+    def realizar_experimento(self):
+        if self.altura <= 0:
+            raise ValueError("La altura no puede ser menor a 0")
+        if self.gravedad <= 0:
+            raise ValueError("La gravedad no puede ser 0")
+        tiempo = math.sqrt((2 * self.altura) / self.gravedad)  #metodo, calculo de tiempo
         return tiempo
+
+if __name__ == "__main__":
+    print("---SIMULACIÓN DE CAÍDA LIBRE---")
+    try: #excepciones
+        altura = float(input("Ingrese altura del objeto (m): "))
+        gravedad = float(input("Ingrese gravedad (m/s²): "))
+        experimento = CaidaLibre(altura, gravedad)
+        tiempo = experimento.realizar_experimento()
+        print("Tiempo aproximado de caída:", round(tiempo, 3), "segundos")
+    except Exception as e:
+        print("Se produjo un error!", e)
+"""
+
+#EJERCICIO 2 :)
+import math
+
+class OperacionCientifica: #clase base
+    def calcular(self):
+        pass 
+
+class RaizCuadrada(OperacionCientifica): #subclase raiz cuadrada
+    def calcular(self, numero):
+        if numero < 0:
+            raise ValueError("No se puede hacer raíz de número negativo") #excepción
+        return math.sqrt(numero)
+
+class Potencia(OperacionCientifica): #subclase potencia
+    def calcular(self, base, exponente):
+        return math.pow(base, exponente)
+
+class Logaritmo(OperacionCientifica): #subclase Logaritm
+    def calcular(self, numero, base=math.e):  
+        if numero <= 0:
+            raise ValueError("No se puede hacer logaritmo de número negativo o cero") #excepción
+        return math.log(numero, base)
         
-    if __name__="__name__":
-        print("---SIMULACIÓN DE CAIDAD LIBRE---")
-        try:
-            altura= int(input("Ingrese altura del objeto"))
-            gravedad= int(input("Ingrese gravedad"))
-            
-            experimento= caidalibre(altura,gravedad)
+class Factorial(OperacionCientifica): #subclase factorial
+    def calcular(self, numero):
+        if numero < 0 or not float(numero).is_integer():
+            raise ValueError("El factorial solo se puede aplicar a enteros positivos") #excepción
+        return math.factorial(int(numero))
+try:
+    print("--- CALCULADORA CIENTÍFICA ---")
+
+    raiz = RaizCuadrada()
+    print("Raíz de 25 =", raiz.calcular(25))
+    
+    pot = Potencia()
+    print("2^4 =", pot.calcular(2, 4))
+
+    log = Logaritmo()
+    print("Logaritmo de 10 =", log.calcular(10))
+    
+    fact = Factorial()
+    print("Factorial de 5 =", fact.calcular(5))
+
+except ValueError as err:
+    print("Error de valor:", err)
+except Exception as e:
+    print("Otro error ocurrió:", e)
