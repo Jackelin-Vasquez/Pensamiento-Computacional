@@ -1,0 +1,58 @@
+dias= ["lunes","martes","miercoles","jueves","viernes"]
+niveles_azucar= [130,160,95,175,160]
+niveles_sal=[200,2400,1800,2499,2700]
+presión= [115,130,110,125,175]
+presion_sintolica= [125, 135, 140,122, 134]
+presion_distolica= [75, 80,76, 60,50]
+
+rango_azucar_minimo= 70
+rango_azucar_maximo= 140
+consumo_sal_maximo= 2300
+
+def clasficacion_presion (self, sistolica,distolica):
+    if sistolica < 120 and distolica <80:
+        return "normal"
+    elif sistolica >= 120 and sistolica <=129 and distolica <80:
+        return "elevada"
+    elif sistolica >= 130 and sistolica <=139 or distolica < 80:
+        return "hipertensión etapa 1"
+    elif sistolica >= 140 or distolica >=90:
+        return "hipertensión etapa 2"
+    else:
+        return "indeterminado"
+        
+print("----EVALUACIÓN DE SALUD----")
+suma_azucar= 0
+suma_sal= 0
+suma_presión= 0
+
+for i in range(len( dias)):
+    dia = dias[i]
+    azucar= niveles_azucar [i]
+    sal= niveles_sal [i]
+    sintolica= presion_sintolica [i]
+    distolica= presion_distolica[i]
+    
+    suma_azucar += azucar
+    suma_sal += sal
+    suma_presión += sintolica
+    
+    print(f"{dia}")
+    
+    if rango_azucar_minimo <= azucar <= rango_azucar_maximo:
+        print(f"Azucar en sangre: {azucar} mg/dl es Normal")
+    else:
+        print (f"Azucar en sangre: {azucar} mg/dl fuera de rango!")
+        
+    if  sal <=consumo_sal_maximo:
+        print(f"consumo sal: {sal}, esta dentro del limite")
+    else: 
+        print(f"consumo de sal: {sal}, fuera de limite!")
+    
+    clasificación= clasificación_presion(sintolica, distolica)
+        if clasificación == "normal":
+            print(f"presión arterial: {sintolica}/ {distolica}")
+        else:
+            print(f"presión arterial: {sintolica}/ {distolica}")
+
+        print ()
