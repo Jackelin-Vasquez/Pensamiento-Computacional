@@ -11,13 +11,11 @@ matriz = [
     [0,0,0,0,0,0,0,0,1,0],
 ]
 
-# Función para imprimir el tablero
 def imprimir_tablero(tablero):
     for fila in tablero:
         print(' '.join(str(c) for c in fila))
     print()
 
-# Función para contar vecinos vivos (izquierda, derecha y diagonales)
 def contar_vecinos(tab, f, c):
     vecinos = 0
     for df in [-1, 0, 1]:
