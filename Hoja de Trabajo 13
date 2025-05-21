@@ -1,3 +1,4 @@
+#JUEGO DE LA VIDA EJERCICIO 13
 matriz = [
     [0,0,0,0,0,0,0,1,1,0],
     [0,1,1,0,0,0,0,0,0,0],
@@ -11,12 +12,12 @@ matriz = [
     [0,0,0,0,0,0,0,0,1,0],
 ]
 
-def imprimir_tablero(tablero):
+def imprimir_tablero(tablero): #Tablero
     for fila in tablero:
         print(' '.join(str(c) for c in fila))
     print()
 
-def contar_vecinos(tab, f, c):
+def contar_vecinos(tab, f, c): #Se cuenta cuantos vecinos vivos hay
     vecinos = 0
     for df in [-1, 0, 1]:
         for dc in [-1, 1]:  # solo izquierda, derecha y diagonales
@@ -25,11 +26,11 @@ def contar_vecinos(tab, f, c):
                 vecinos += tab[nf][nc]
     return vecinos
 
-def siguiente_generacion(tablero):
+def siguiente_generacion(tablero): 
     nueva_matriz = []
 
     for i in range(len(tablero)):
-        nueva_fila = []  # Usaremos append para cada fila
+        nueva_fila = []  
         for j in range(len(tablero[0])):
             vecinos = contar_vecinos(tablero, i, j)
             celula = tablero[i][j]
@@ -44,11 +45,10 @@ def siguiente_generacion(tablero):
                     nueva_fila.append(1)  # nace
                 else:
                     nueva_fila.append(0)  # sigue muerta
-        nueva_matriz.append(nueva_fila)  # agregamos la fila completa
+        nueva_matriz.append(nueva_fila)  
 
     return nueva_matriz
 
-# generaciones
 print("Generación 0:")
 imprimir_tablero(matriz)
 
