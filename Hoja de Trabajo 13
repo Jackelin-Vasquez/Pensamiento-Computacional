@@ -1,0 +1,63 @@
+matriz = [
+    [0,0,0,0,0,0,0,1,1,0],
+    [0,1,1,0,0,0,0,0,0,0],
+    [0,1,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,1,1,0,0,0],
+    [0,0,0,0,0,1,1,0,0,0],
+    [0,0,1,1,0,0,0,0,0,0],
+    [0,0,1,1,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,1,0],
+]
+
+# Función para imprimir el tablero
+def imprimir_tablero(tablero):
+    for fila in tablero:
+        print(' '.join(str(c) for c in fila))
+    print()
+
+# Función para contar vecinos vivos (izquierda, derecha y diagonales)
+def contar_vecinos(tab, f, c):
+    vecinos = 0
+    for df in [-1, 0, 1]:
+        for dc in [-1, 1]:  # solo izquierda, derecha y diagonales
+            nf, nc = f + df, c + dc
+            if 0 <= nf < len(tab) and 0 <= nc < len(tab[0]):
+                vecinos += tab[nf][nc]
+    return vecinos
+
+def siguiente_generacion(tablero):
+    nueva_matriz = []
+
+    for i in range(len(tablero)):
+        nueva_fila = []  # Usaremos append para cada fila
+        for j in range(len(tablero[0])):
+            vecinos = contar_vecinos(tablero, i, j)
+            celula = tablero[i][j]
+
+            if celula == 1:
+                if vecinos < 1 or vecinos > 2:
+                    nueva_fila.append(0)  # muere
+                else:
+                    nueva_fila.append(1)  # sobrevive
+            else:
+                if vecinos == 1:
+                    nueva_fila.append(1)  # nace
+                else:
+                    nueva_fila.append(0)  # sigue muerta
+        nueva_matriz.append(nueva_fila)  # agregamos la fila completa
+
+    return nueva_matriz
+
+# generaciones
+print("Generación 0:")
+imprimir_tablero(matriz)
+
+gen1 = siguiente_generacion(matriz)
+print("Generación 1:")
+imprimir_tablero(gen1)
+
+gen2 = siguiente_generacion(gen1)
+print("Generación 2:")
+imprimir_tablero(gen2)
