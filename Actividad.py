@@ -33,4 +33,11 @@ for propietarios,propietario in propietarios.items():
     print("---"*4)
     print(f"Nombre:{propietario["nombre"]}")
     print(f"Telefono:{propietario["telefono"]}")
-    print(f"Telefono:{propietario["vehiculo"]}")
+    print(f"Vehiculos:{propietario["vehiculos"]}")
+    print("---"*3)
+
+buscar_propietario= input("Ingrese número de identificación para buscar propietario:")
+if buscar_propietario in propietarios:
+    for propietarios,propi in propietarios.items():
+
+
