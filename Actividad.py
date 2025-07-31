@@ -39,8 +39,13 @@ for propietarios,propietario in propietarios.items():
     print("---"*4)
     print(f"Nombre:{propietario["nombre"]}")
     print(f"Telefono:{propietario["telefono"]}")
-    print(f"Vehiculos:{propietario["vehiculos"]}")
-    print("---"*3)
+    print("---VEHICULOS---")
+    print(f"Placa:{propietario["vehiculos"]["placa"]}")
+    print(f"Marca:{propietario["vehiculos"]["marca"]}")
+    print(f"Modelo:{propietario["vehiculos"]["modelo"]}")
+    print(f"Año:{propietario["vehiculos"]["año"]}")
+    print(f"Impuesto:{propietario["vehiculos"]["impuesto"]}")
+    print("---"*4)
 
 buscar_propietario= input("Ingrese número de identificación para buscar propietario:")
 if buscar_propietario in propietarios:
@@ -48,5 +53,11 @@ if buscar_propietario in propietarios:
     print("---Propietario---")
     print(f"Nombre:{propi["Nombre"]}")
     print(f"Telefono:{propi["telefono"]}")
-    print(f"vehiculos.:{propi["vehiculos"]}")
+    print("---VEHICULOS---")
+    print(f"Marca:{propi["vehiculos"]["placa"]}")
+    print(f"Modelo:{propi["vehiculos"]["modelo"]}")
+    print(f"Año:{propi["vehiculos"]["año"]}")
+    print(f"Impuesto:{propi["vehiculos"]["impuesto"]}")
 
+print("---CANTIDAD DE CARROS CON IMPUESTO---")
+print(f"Cantidad de carros que tienen impuesto:{si}\nCantidad de carros que no tienen impuestos:{no}")
