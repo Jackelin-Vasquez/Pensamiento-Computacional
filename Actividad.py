@@ -17,8 +17,8 @@ for i in range(numero_propietarios):
 
     propietarios[nit]={
         "nombre":nombre_completo,
-        "tefelono":telefono,
-        "cantidad_vehiculos":{
+        "telefono":telefono,
+        "vehiculos":{
                 "placa":placa,
                 "marca":marca,
                 "modelo":modelo,
@@ -33,4 +33,4 @@ for propietarios,propietario in propietarios.items():
     print("---"*4)
     print(f"Nombre:{propietario["nombre"]}")
     print(f"Telefono:{propietario["telefono"]}")
-    print(f"vehiculo:{propietario["cantidad_vehiculo"]}")
+    print(f"Telefono:{propietario["vehiculo"]}")
