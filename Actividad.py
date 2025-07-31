@@ -42,4 +42,4 @@ if buscar_propietario in propietarios:
     print("---Propietario---")
     print(f"Nombre:{propi["Nombre"]}")
     print(f"Telefono:{propi["telefono"]}")
-    print(f"vehiculos:{propi["vehiculos"]}")
+    print(f"vehiculos.:{propi["vehiculos"]}")
