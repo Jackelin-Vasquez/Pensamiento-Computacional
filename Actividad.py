@@ -1,5 +1,7 @@
 propietarios={}
 vehiculos={}
+si=0
+no=0
 numero_propietarios= int(input("Ingrese cantidad de propietarias a ingresar:"))
 for i in range(numero_propietarios):
     print(f"---Propietario {i+1}---")
@@ -14,6 +16,10 @@ for i in range(numero_propietarios):
         modelo= input("Ingrese modelo de vehiculo")
         year= int(input("Ingrese año de vehiculo:"))
         impuesto= input("¿Tiene impuesto? Si/No:")
+        if impuesto =="si":
+            si += 1
+        elif impuesto =="no":
+            no+=1
 
     propietarios[nit]={
         "nombre":nombre_completo,
@@ -43,3 +49,4 @@ if buscar_propietario in propietarios:
     print(f"Nombre:{propi["Nombre"]}")
     print(f"Telefono:{propi["telefono"]}")
     print(f"vehiculos.:{propi["vehiculos"]}")
+
