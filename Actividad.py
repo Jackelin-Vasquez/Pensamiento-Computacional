@@ -40,5 +40,6 @@ buscar_propietario= input("Ingrese número de identificación para buscar propie
 if buscar_propietario in propietarios:
     propi= propietarios[buscar_propietario]
     print("---Propietario---")
-    print(f"Nombre:{propi["nombre"]")
-    print(f"Telefono{propi["telefono"]}")
+    print(f"Nombre:{propi["Nombre"]}")
+    print(f"Telefono:{propi["telefono"]}")
+    print(f"vehiculos:{propi["vehiculos"]}")
