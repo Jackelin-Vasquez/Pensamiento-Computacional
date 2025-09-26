@@ -1,0 +1,23 @@
+def hanoi(n, origen, auxiliar, destino):
+    if n == 1:
+        print(f"Mover disco 1 de {origen} a {destino}")
+    else:
+        # Mover n-1 discos de origen a auxiliar
+        hanoi(n - 1, origen, destino, auxiliar)
+
+        # Mover el disco más grande a destino
+        print(f"Mover disco {n} de {origen} a {destino}")
+
+        # Mover los n-1 discos de auxiliar a destino
+        hanoi(n - 1, auxiliar, origen, destino)
+
+
+# Programa principal
+if __name__ == "__main__":
+    discos = int(input("Ingrese el número de discos: "))
+    print(f"\nResolviendo Torres de Hanói con {discos} discos:\n")
+    hanoi(discos, "A", "B", "C")
+
+    # Fórmula general: 2^n - 1
+    movimientos = 2**discos - 1
+    print(f"\nEn este caso se necesitaron {movimientos} movimientos.")
